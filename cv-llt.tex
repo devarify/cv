@@ -1,0 +1,103 @@
+%%%%%%%%%%%%%%%
+% This CV example/template is based on my own
+% CV which I (lamely attempted) to clean up, so that
+% it's less of an eyesore and easier for others to use.
+%
+% LianTze Lim (liantze@gmail.com)
+% 16 September, 2016
+%
+\documentclass[a4paper,skipsamekey,11pt,british]{curve}
+
+% Uncomment to enable Chinese; needs XeLaTeX
+% \usepackage{ctex}
+
+\usepackage{settings}
+
+
+% Change the fonts if you want
+\ifxetexorluatex % If you're using XeLaTeX or LuaLaTeX
+  \usepackage{fontspec}
+  %% Warning: EB Garamond contains no bold!! Substituting for Junicode Bold, but *may not look nice nor consistent*!!
+%   \setmainfont[Ligatures=TeX,SmallCapsFeatures={Letters=SmallCaps,LetterSpace=5},BoldFont=Junicode Bold]{EB Garamond}
+  %% Charis SIL's rather nice, actually.
+  \setmainfont[Ligatures=TeX,SmallCapsFeatures={Letters=SmallCaps,LetterSpace=5}]{Charis SIL}
+  \setsansfont[Ligatures=TeX]{Lato}
+  \setmonofont{Inconsolata}
+\else % If you're using pdfLaTeX or latex
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[tracking=smallcaps]{microtype}
+  \usepackage{fbb}
+  \usepackage[type1]{cabin}
+  \usepackage[varqu,varl]{zi4}
+  \useosf  %% Comment out if you prefer lining figures rather than old style figures
+\fi
+\usepackage{csquotes}
+
+%% Only needed if you want a Publication List
+\addbibresource{own-bib.bib}
+
+%% Specify your last name and first name (as given in the .bib) to automatically bold your own name in the publications list. One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly for now...
+% \myname{Lim}{Lian\bibnamedelima Tze}
+\myname{d'Andrimont}{Raphaël}
+
+% Change the page margins if you want
+% \geometry{left=1cm,right=1cm,top=1.5cm,bottom=1.5cm}
+
+% Change the colours if you want
+% \definecolor{SwishLineColour}{HTML}{00FFFF}
+% \definecolor{MarkerColour}{HTML}{0000CC}
+
+% Change the item prefix marker if you want
+% \prefixmarker{$\diamond$}
+
+%% Photo is only shown if "fullonly" is included
+\includecomment{fullonly}
+% \excludecomment{fullonly}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\leftheader{%
+  {\LARGE\bfseries\sffamily Arif Yulianto, S.Kom.}
+
+  \makefield{\faCircleO}{\url{Bandung, 2 July 1994}}
+
+  \makefield{\faEnvelopeO}{\texttt{arify@outlook.co.id}}
+  \makefield{\faTwitter}{\texttt{@bangarify}}
+
+  \makefield{\faGlobe}{\url{http://www.devarify.org/}}
+  \makefield{\faPhone}{\texttt{081222300542}}
+
+  \makefield{\faLinkedinSquare}
+  {\url{http://www.linkedin.com/in/arifyulianto/}}
+}
+
+\rightheader{~}
+\begin{fullonly}
+\photo[r]{arifyulianto.png}
+\photoscale{0.30}
+\end{fullonly}
+
+\title{Curriculum Vitae}
+
+\begin{document}
+\makeheaders[c]
+
+\makerubric{employment}
+\makerubric{education}
+
+\makerubric{organizational}
+\makerubric{project}
+\makerubric{achievment}
+
+
+\makerubric{skills}
+\makerubric{interest}
+%\makerubric{misc}
+
+%\makerubric{referee}
+% \input{referee-full}
+
+\end{document}
